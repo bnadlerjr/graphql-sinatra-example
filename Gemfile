@@ -23,8 +23,11 @@ group :test do
 end
 
 group :development, :test do
+  gem 'flay', '~> 2.12'
+  gem 'flog', '~> 4.6'
   gem 'rubocop', '~> 1.12'
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rake', '~> 0.5'
   gem 'rubocop-rspec', '~> 2.2'
+  gem 'simplecov', '~> 0.21', require: false
 end

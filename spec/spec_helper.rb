@@ -2,6 +2,15 @@
 
 ENV['RACK_ENV'] = 'test'
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/bin/'
+  add_filter '/config/'
+  add_filter '/db/migrate/'
+  add_filter '/spec/'
+  coverage_dir 'tmp/coverage'
+end
+
 require_relative '../config/environment'
 
 require 'warning'

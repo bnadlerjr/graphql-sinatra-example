@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+unless 'production' == ENV['RACK_ENV']
+  require 'bundler/setup'
+  require 'flay'
+
+  desc 'Analyze code for structural similarities'
+  task :flay do
+    flay = Flay.new
+    files = FileList['app.rb', 'app/**/*.rb']
+    flay.process(*files)
+    threshold = 200
+
+    if flay.total > threshold
+      puts flay.report
+      raise "Flay total too high! #{flay.total} > #{threshold}"
+    end
+  end
+
+  require 'flog'
+  desc 'Analyze code complexity'
+  task :flog do
+    flog = Flog.new
+    files = FileList['app.rb', 'app/**/*.rb']
+    flog.flog(*files)
+    threshold = 50
+
+    bad_methods = flog.totals.select do |_name, score|
+      score > threshold
+    end
+
+    bad_methods.sort_by { |a| a[1] }.each do |name, score|
+      puts format('%<score>8.1f: %<name>s', score: score, name: name)
+    end
+
+    unless bad_methods.empty?
+      raise "#{bad_methods.size} methods have a flog complexity > #{threshold}"
+    end
+  end
+end
