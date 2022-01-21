@@ -1,0 +1,12 @@
+.DS_Store
+.bundle
+.byebug_history
+.env
+.env.test
+.rspec_status
+/tmp
+coverage
+db/*.db
+public
+spec/examples.txt
+tags
