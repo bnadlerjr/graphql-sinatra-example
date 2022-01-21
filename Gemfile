@@ -21,3 +21,10 @@ group :test do
   gem 'rspec', '~> 3.10'
   gem 'warning', '~> 1.2'
 end
+
+group :development, :test do
+  gem 'rubocop', '~> 1.12'
+  gem 'rubocop-performance', '~> 1.13'
+  gem 'rubocop-rake', '~> 0.5'
+  gem 'rubocop-rspec', '~> 2.2'
+end

@@ -1,0 +1,33 @@
+require:
+    - rubocop-performance
+    - rubocop-rake
+    - rubocop-rspec
+
+AllCops:
+    Exclude:
+        - 'tmp/*'
+        - 'vendor/bundle/**/*'
+    NewCops: enable
+    TargetRubyVersion: 2.7.3
+
+Layout/LineLength:
+    Max: 90
+
+Layout/SpaceAroundEqualsInParameterDefault:
+    EnforcedStyle: no_space
+
+Metrics/BlockLength:
+    IgnoredMethods:
+        - describe
+        - context
+        - it
+        - RSpec.configure
+
+Metrics/ClassLength:
+    Max: 150
+
+Metrics/MethodLength:
+    Max: 15
+
+Style/YodaCondition:
+    EnforcedStyle: require_for_equality_operators_only

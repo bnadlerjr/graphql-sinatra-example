@@ -6,4 +6,4 @@ Dir.glob('tasks/*.rake').each { |r| import r }
 task default: 'spec'
 
 desc 'Run CI checks'
-task ci: ['spec']
+task ci: %w[spec rubocop]
