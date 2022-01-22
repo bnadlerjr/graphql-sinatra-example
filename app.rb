@@ -2,7 +2,8 @@
 
 require 'sinatra'
 
-require_relative 'app/gql_example'
+require_relative 'models/link'
+require_relative 'graphql/schema'
 
 get '/' do
   json message: 'Smoke test successful!'
