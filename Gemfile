@@ -5,6 +5,7 @@ ruby '2.7.3'
 
 gem 'puma', '~> 5.2'
 gem 'rake', '~> 12.3'
+gem 'sequel', '~> 5.43'
 gem 'sinatra', '~> 2.1'
 gem 'sinatra-contrib', '~> 2.1'
 
@@ -29,5 +30,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rake', '~> 0.5'
   gem 'rubocop-rspec', '~> 2.2'
+  gem 'rubocop-sequel', '~> 0.2'
   gem 'simplecov', '~> 0.21', require: false
+  gem 'sqlite3', '~> 1.4'
 end

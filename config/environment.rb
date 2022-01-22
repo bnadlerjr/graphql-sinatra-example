@@ -7,6 +7,8 @@ unless 'production' == ENV['RACK_ENV']
   Dotenv.load
 end
 
+require_relative 'db'
+
 require_relative '../app'
 
 configure do

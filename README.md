@@ -59,6 +59,25 @@ Here is a table containing all available environment variable configuration opti
     </thead>
     <tbody>
         <tr>
+            <td>DATABASE_URL</td>
+            <td>Yes</td>
+            <td>
+              `sqlite://db/test.db` (for the test environment <em>only</em>)
+            </td>
+            <td>
+              Connection URL to the database. The format varies according
+              database adapter. Refer to the
+              <a href="https://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html">
+              Sequel gem documentation</a> for more information. Some examples:
+              <dl>
+                <dt>Sqlite3</dt>
+                <dd>`sqlite://db/development.db`</dd>
+                <dt>PostgreSQL</dt>
+                <dd>`postgresql://localhost/myapp_development?pool=5`</dd>
+              </dl>
+            </td>
+        </tr>
+        <tr>
             <td>MAX_THREADS</td>
             <td>No</td>
             <td>5</td>

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+ENV['DATABASE_URL'] = 'sqlite://db/test.db'
 ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
@@ -24,6 +25,10 @@ require 'support/rack_helpers'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.around do |example|
+    DB.transaction(rollback: :always) { example.run }
+  end
+
   config.include RackHelpers, rack: true
 
   config.expect_with :rspec do |expectations|
