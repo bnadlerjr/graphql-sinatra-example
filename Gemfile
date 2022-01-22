@@ -5,6 +5,8 @@ ruby '2.7.3'
 
 gem 'graphql', '~> 1.13'
 gem 'puma', '~> 5.2'
+gem 'rack-contrib', '~> 2.3'
+gem 'rack-cors', '~> 1.1'
 gem 'rake', '~> 12.3'
 gem 'sequel', '~> 5.43'
 gem 'sinatra', '~> 2.1'
@@ -16,6 +18,7 @@ group :development do
   gem 'dotenv', '~> 2.7'
   gem 'pry-byebug', '~> 3.9'
   gem 'racksh', '~> 1.0'
+  gem 'ruby_graphiql_explorer', '~> 1.0'
 end
 
 group :test do

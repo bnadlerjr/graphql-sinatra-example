@@ -2,4 +2,12 @@
 
 require_relative 'config/environment'
 
-run Sinatra::Application
+if 'development' == ENV.fetch('RACK_ENV', 'production')
+  require 'ruby_graphiql_explorer'
+  run Rack::URLMap.new(
+    '/' => Sinatra::Application,
+    '/graphiql' => RubyGraphiqlExplorer::App
+  )
+else
+  run Sinatra::Application
+end

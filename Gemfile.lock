@@ -44,6 +44,15 @@ GEM
     puma (5.5.2)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-app (7.7.0)
+      rack
+    rack-app-front_end (0.22.0)
+      rack-app (>= 6.3.1)
+      tilt
+    rack-contrib (2.3.0)
+      rack (~> 2.0)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-protection (2.1.0)
       rack
     rack-test (1.1.0)
@@ -94,6 +103,9 @@ GEM
       rubocop (~> 1.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
+    ruby_graphiql_explorer (1.0.2)
+      rack-app
+      rack-app-front_end
     ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
     sequel (5.52.0)
@@ -132,6 +144,8 @@ DEPENDENCIES
   graphql (~> 1.13)
   pry-byebug (~> 3.9)
   puma (~> 5.2)
+  rack-contrib (~> 2.3)
+  rack-cors (~> 1.1)
   rack-test (~> 1.1)
   racksh (~> 1.0)
   rake (~> 12.3)
@@ -143,6 +157,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.5)
   rubocop-rspec (~> 2.2)
   rubocop-sequel (~> 0.2)
+  ruby_graphiql_explorer (~> 1.0)
   sequel (~> 5.43)
   simplecov (~> 0.21)
   sinatra (~> 2.1)

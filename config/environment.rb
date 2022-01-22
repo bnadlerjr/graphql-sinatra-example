@@ -9,10 +9,21 @@ end
 
 require_relative 'db'
 
+require 'rack/cors'
+require 'rack/contrib'
+require 'sinatra/json'
 require_relative '../app'
 
 configure do
-  # Configuration common to all environments goes here...
+  use Rack::Cors do
+    allow do
+      origins '*'
+      resource '/graphql', headers: :any, methods: :post
+    end
+  end
+
+  use Rack::JSONBodyParser,
+      verbs: ['POST'], media: ['application/json', 'application/vnd.api+json']
 end
 
 configure :development do
