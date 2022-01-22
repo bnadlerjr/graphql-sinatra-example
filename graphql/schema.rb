@@ -2,7 +2,9 @@
 
 require 'graphql'
 
-require_relative 'link_type'
+require_relative 'links/link_type'
+require_relative 'links/create_link'
+require_relative 'mutation'
 require_relative 'query'
 
 module GqlExample
@@ -10,6 +12,7 @@ module GqlExample
     class Schema < ::GraphQL::Schema
       description 'The GqlExample schema'
 
+      mutation MutationType
       query QueryType
     end
   end
