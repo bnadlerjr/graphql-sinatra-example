@@ -20,6 +20,7 @@ end
 group :test do
   gem 'rack-test', '~> 1.1'
   gem 'rspec', '~> 3.10'
+  gem 'rspec_sequel_matchers', '~> 0.5'
   gem 'warning', '~> 1.2'
 end
 

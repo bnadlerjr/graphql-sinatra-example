@@ -21,6 +21,7 @@ Gem.path.each { |path| Warning.ignore(//, path) }
 
 require 'pry-byebug'
 require 'rack/test'
+require 'rspec_sequel_matchers'
 require 'support/rack_helpers'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -30,6 +31,7 @@ RSpec.configure do |config|
   end
 
   config.include RackHelpers, rack: true
+  config.include RspecSequel::Matchers
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
