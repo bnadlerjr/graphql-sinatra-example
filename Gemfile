@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 ruby '2.7.3'
 
+gem 'graphql', '~> 1.13'
 gem 'puma', '~> 5.2'
 gem 'rake', '~> 12.3'
 gem 'sequel', '~> 5.43'
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'flay', '~> 2.12'
   gem 'flog', '~> 4.6'
   gem 'rubocop', '~> 1.12'
+  gem 'rubocop-graphql', '~> 0.12'
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rake', '~> 0.5'
   gem 'rubocop-rspec', '~> 2.2'

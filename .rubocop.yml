@@ -1,8 +1,9 @@
 require:
-    - rubocop-sequel
+    - rubocop-graphql
     - rubocop-performance
     - rubocop-rake
     - rubocop-rspec
+    - rubocop-sequel
 
 AllCops:
     Exclude:
