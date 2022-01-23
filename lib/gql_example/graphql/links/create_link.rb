@@ -14,6 +14,8 @@ module GqlExample
 
       def resolve(params)
         GqlExample.create_link(params)
+      rescue Sequel::ValidationFailed => e
+        ::GraphQL::ExecutionError.new("Invalid input: #{e.message}")
       end
     end
   end
