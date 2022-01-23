@@ -16,5 +16,9 @@ module GqlExample
     def fetch_all_links
       Link.all
     end
+
+    def create_user(params)
+      User.create(params)
+    end
   end
 end

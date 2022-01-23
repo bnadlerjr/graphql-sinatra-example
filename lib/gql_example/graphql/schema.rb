@@ -3,8 +3,14 @@
 require 'graphql'
 
 require_relative 'base'
+
 require_relative 'links/link_type'
 require_relative 'links/create_link'
+
+require_relative 'users/user_type'
+require_relative 'users/auth_credentials_input'
+require_relative 'users/create_user'
+
 require_relative 'mutation'
 require_relative 'query'
 

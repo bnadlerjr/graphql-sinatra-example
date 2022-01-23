@@ -7,6 +7,10 @@ module GqlExample
       null false
     end
 
+    class BaseInputObject < ::GraphQL::Schema::InputObject
+      description 'All input objects inherit from this class.'
+    end
+
     class BaseObject < ::GraphQL::Schema::Object
       description 'All objects inherit from this class.'
     end
