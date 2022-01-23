@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable RSpec/FilePath
 RSpec.describe GqlExample::GraphQL::CreateLink do
   subject(:mutation) do
     described_class.new(object: nil, field: nil, context: {})
@@ -41,3 +42,4 @@ RSpec.describe GqlExample::GraphQL::CreateLink do
     end
   end
 end
+# rubocop:enable RSpec/FilePath
