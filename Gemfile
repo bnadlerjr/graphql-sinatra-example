@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby '2.7.3'
 
 gem 'graphql', '~> 1.13'
+gem 'jwt', '~> 2.3'
 gem 'puma', '~> 5.2'
 gem 'rack-contrib', '~> 2.3'
 gem 'rack-cors', '~> 1.1'

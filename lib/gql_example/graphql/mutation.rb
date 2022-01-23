@@ -14,6 +14,8 @@ module GqlExample
             description: 'Create a new user',
             mutation: CreateUser
       # rubocop:enable GraphQL/ExtractType
+
+      field :signin_user, description: 'Sign user in', mutation: SignIn
     end
   end
 end

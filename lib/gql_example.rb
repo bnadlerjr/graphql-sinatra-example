@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'jwt'
+
 require_relative 'gql_example/link'
 require_relative 'gql_example/user'
 
@@ -19,6 +21,13 @@ module GqlExample
 
     def create_user(params)
       User.create(params)
+    end
+
+    def sign_in(email, password)
+      user = User.where(email: email).first
+      return unless user&.authenticate(password)
+
+      user
     end
   end
 end
