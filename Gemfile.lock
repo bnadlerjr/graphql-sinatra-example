@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    bcrypt (3.1.16)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -109,6 +110,9 @@ GEM
     ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
     sequel (5.52.0)
+    sequel_secure_password (0.2.15)
+      bcrypt (>= 3.1, < 4.0)
+      sequel (>= 4.1.0, < 6.0)
     sexp_processor (4.16.0)
     simplecov (0.21.2)
       docile (~> 1.1)
@@ -159,6 +163,7 @@ DEPENDENCIES
   rubocop-sequel (~> 0.2)
   ruby_graphiql_explorer (~> 1.0)
   sequel (~> 5.43)
+  sequel_secure_password (~> 0.2)
   simplecov (~> 0.21)
   sinatra (~> 2.1)
   sinatra-contrib (~> 2.1)

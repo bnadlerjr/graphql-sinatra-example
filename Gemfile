@@ -9,6 +9,7 @@ gem 'rack-contrib', '~> 2.3'
 gem 'rack-cors', '~> 1.1'
 gem 'rake', '~> 12.3'
 gem 'sequel', '~> 5.43'
+gem 'sequel_secure_password', '~> 0.2'
 gem 'sinatra', '~> 2.1'
 gem 'sinatra-contrib', '~> 2.1'
 
