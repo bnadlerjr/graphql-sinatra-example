@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-
-require_relative 'models/link'
-require_relative 'graphql/schema'
+require_relative 'lib/gql_example'
 
 get '/' do
   json message: 'Smoke test successful!'
