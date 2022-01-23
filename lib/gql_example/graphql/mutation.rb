@@ -2,7 +2,7 @@
 
 module GqlExample
   module GraphQL
-    class MutationType < ::GraphQL::Schema::Object
+    class MutationType < BaseObject
       description 'Root for all mutations'
 
       field :create_link,

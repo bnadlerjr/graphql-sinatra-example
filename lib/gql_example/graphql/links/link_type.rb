@@ -2,7 +2,7 @@
 
 module GqlExample
   module GraphQL
-    class LinkType < ::GraphQL::Schema::Object
+    class LinkType < BaseObject
       description 'Link type'
 
       field :id, ID, 'Unique ID of the Link', null: false

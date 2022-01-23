@@ -2,6 +2,7 @@
 
 require 'graphql'
 
+require_relative 'base'
 require_relative 'links/link_type'
 require_relative 'links/create_link'
 require_relative 'mutation'

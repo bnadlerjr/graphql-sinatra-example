@@ -4,7 +4,7 @@ module GqlExample
   module GraphQL
     # Mutation to create a new Link
     #
-    class CreateLink < ::GraphQL::Schema::Mutation
+    class CreateLink < BaseMutation
       description 'Create a new link'
       null false
       argument :description, String, 'Description of Link', required: true

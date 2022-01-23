@@ -4,7 +4,7 @@ module GqlExample
   module GraphQL
     # The root GraphQL query type.
     #
-    class QueryType < ::GraphQL::Schema::Object
+    class QueryType < BaseObject
       description 'The root query type'
 
       field :all_links, [LinkType], 'Returns all Link entries', null: false
