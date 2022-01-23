@@ -3,6 +3,9 @@
 ENV['DATABASE_URL'] = 'sqlite://db/test.db'
 ENV['RACK_ENV'] = 'test'
 
+require 'bcrypt'
+BCrypt::Engine.cost = BCrypt::Engine::MIN_COST
+
 require 'simplecov'
 SimpleCov.start do
   add_filter '/bin/'
