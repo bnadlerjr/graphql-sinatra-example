@@ -18,6 +18,10 @@ Layout/LineLength:
 Layout/SpaceAroundEqualsInParameterDefault:
     EnforcedStyle: no_space
 
+Lint/AmbiguousBlockAssociation:
+    Exclude:
+        - "spec/**/*"
+
 Metrics/BlockLength:
     IgnoredMethods:
         - describe
@@ -30,6 +34,9 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
     Max: 15
+
+Style/BlockDelimiters:
+    EnforcedStyle: braces_for_chaining
 
 Style/YodaCondition:
     EnforcedStyle: require_for_equality_operators_only
