@@ -10,7 +10,7 @@ module GqlExample
       field :all_links, [LinkType], 'Returns all Link entries', null: false
 
       def all_links
-        GqlExample::Link.all
+        GqlExample.fetch_all_links
       end
     end
   end
