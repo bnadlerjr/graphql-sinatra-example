@@ -12,6 +12,6 @@ namespace :graphql do
       # modify this file manually.
     TEXT
     File.write(schema_path, "#{msg}\n#{schema_definition}")
-    puts "<= Dumped GraphQL schema to #{schema_path}"
+    puts "\n<= Dumped GraphQL schema to #{schema_path}"
   end
 end
