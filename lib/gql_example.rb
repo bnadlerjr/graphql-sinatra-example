@@ -2,6 +2,7 @@
 
 require 'jwt'
 
+require_relative 'gql_example/auth_token'
 require_relative 'gql_example/link'
 require_relative 'gql_example/user'
 

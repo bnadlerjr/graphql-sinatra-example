@@ -7,14 +7,8 @@ module GqlExample
     plugin :secure_password
     plugin :validation_helpers
 
-    # Helper method for generating a JWT. Note that this implementation is
-    # for demo purposes only. It does NOT specify a signing algorithm and
-    # is NOT INTENDED for production use.
-    #
-    # https://github.com/jwt/ruby-jwt#algorithms-and-usage
-    #
     def token
-      JWT.encode({ 'user-id' => id }, nil, 'none')
+      AuthToken.encode({ 'user-id' => id })
     end
 
     def validate
@@ -22,6 +16,13 @@ module GqlExample
 
       validates_presence %i[email name]
       validates_unique :email
+    end
+
+    def self.from_token(token)
+      return unless token&.match?(/[^[:space:]]/)
+
+      decoded = AuthToken.decode(token)
+      self[decoded['user-id']]
     end
   end
 end
