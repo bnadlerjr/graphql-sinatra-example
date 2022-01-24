@@ -24,6 +24,8 @@ configure do
 
   use Rack::JSONBodyParser,
       verbs: ['POST'], media: ['application/json', 'application/vnd.api+json']
+
+  enable :sessions
 end
 
 configure :development do
