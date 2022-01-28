@@ -13,7 +13,7 @@ module GqlExample
       type GqlExample::GraphQL::LinkType
 
       def resolve(params)
-        GqlExample.create_link(params)
+        GqlExample.create_link(params.merge(user: context[:current_user]))
       rescue Sequel::ValidationFailed => e
         ::GraphQL::ExecutionError.new("Invalid input: #{e.message}")
       end

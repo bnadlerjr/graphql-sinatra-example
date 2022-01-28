@@ -8,6 +8,7 @@ module GqlExample
       field :id, ID, 'Unique ID of the Link', null: false
 
       field :description, String, 'Description of the Link', null: false
+      field :posted_by, UserType, 'User who posted the Link', null: true, method: :user
       field :url, String, 'URL of the Link', null: false
     end
   end

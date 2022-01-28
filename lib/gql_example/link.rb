@@ -6,10 +6,12 @@ module GqlExample
   class Link < ::Sequel::Model
     plugin :validation_helpers
 
+    many_to_one :user
+
     def validate
       super
 
-      validates_presence %i[url description]
+      validates_presence %i[url description user]
       validates_unique :url
     end
   end
