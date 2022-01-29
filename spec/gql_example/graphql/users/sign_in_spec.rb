@@ -16,11 +16,6 @@ RSpec.describe GqlExample::GraphQL::SignIn do
 
     it { expect(resolved_mutation[:token]).to eq(db_user.token) }
     it { expect(resolved_mutation[:user]).to eq(db_user) }
-
-    it 'adds the token to the session' do
-      resolved_mutation
-      expect(context[:session]).to eq({ token: db_user.token })
-    end
   end
 
   context 'with invalid credentials' do

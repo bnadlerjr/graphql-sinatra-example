@@ -18,7 +18,6 @@ module GqlExample
         user = GqlExample.sign_in(credentials[:email], credentials[:password])
         return unless user
 
-        context[:session] = { token: user.token }
         { token: user.token, user: user }
       end
     end
