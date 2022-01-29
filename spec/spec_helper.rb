@@ -22,6 +22,7 @@ require 'warning'
 # Ignore all warnings in Gem dependencies
 Gem.path.each { |path| Warning.ignore(//, path) }
 
+require 'factory_bot'
 require 'pry-byebug'
 require 'rack/test'
 require 'rspec_sequel_matchers'
@@ -31,6 +32,12 @@ require 'support/rack_helpers'
 RSpec.configure do |config|
   config.around do |example|
     DB.transaction(rollback: :always) { example.run }
+  end
+
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryBot.find_definitions
   end
 
   config.include RackHelpers, rack: true

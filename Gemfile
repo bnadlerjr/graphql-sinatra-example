@@ -24,6 +24,7 @@ group :development do
 end
 
 group :test do
+  gem 'factory_bot', '~> 6.2'
   gem 'rack-test', '~> 1.1'
   gem 'rspec', '~> 3.10'
   gem 'rspec_sequel_matchers', '~> 0.5'

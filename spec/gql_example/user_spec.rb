@@ -9,14 +9,7 @@ RSpec.describe GqlExample::User do
 
   describe '.from_token' do
     context 'when the token is valid' do
-      let(:db_user) do
-        described_class.create(
-          name: 'John Doe',
-          email: 'jdoe@example.com',
-          password: 'secret',
-          password_confirmation: 'secret'
-        )
-      end
+      let(:db_user) { create(:user) }
 
       it 'returns the user associated with the token' do
         expect(described_class.from_token(db_user.token)).to eq(db_user)

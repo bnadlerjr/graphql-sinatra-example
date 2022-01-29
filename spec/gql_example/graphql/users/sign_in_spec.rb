@@ -7,15 +7,7 @@ RSpec.describe GqlExample::GraphQL::SignIn do
   end
 
   let(:context) { {} }
-
-  let!(:db_user) do
-    GqlExample::User.create(
-      name: 'John Doe',
-      email: 'jdoe@example.com',
-      password: 'secret',
-      password_confirmation: 'secret'
-    )
-  end
+  let(:db_user) { create(:user) }
 
   context 'with valid credentials' do
     let(:resolved_mutation) do
