@@ -25,6 +25,7 @@ Gem.path.each { |path| Warning.ignore(//, path) }
 require 'factory_bot'
 require 'pry-byebug'
 require 'rack/test'
+require 'rspec/graphql_matchers'
 require 'rspec_sequel_matchers'
 require 'support/rack_helpers'
 

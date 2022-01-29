@@ -27,6 +27,7 @@ group :test do
   gem 'factory_bot', '~> 6.2'
   gem 'rack-test', '~> 1.1'
   gem 'rspec', '~> 3.10'
+  gem 'rspec-graphql_matchers', '~> 1.3'
   gem 'rspec_sequel_matchers', '~> 0.5'
   gem 'warning', '~> 1.2'
 end
