@@ -3,6 +3,7 @@
 Sequel.migration do
   change do
     create_table(:votes) do
+      primary_key :id
       foreign_key :link_id, :links
       foreign_key :user_id, :users
       index :link_id, concurrently: true, null: false

@@ -5,7 +5,7 @@ FactoryBot.define do
     to_create(&:save_changes)
 
     name { 'John doe' }
-    email { 'jdoe@example.com' }
+    sequence(:email) { |n| "jdoe+#{n}@example.com" }
     password { 'secret' }
     password_confirmation { 'secret' }
   end

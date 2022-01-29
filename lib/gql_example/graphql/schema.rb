@@ -12,6 +12,9 @@ require_relative 'users/sign_in'
 require_relative 'links/link_type'
 require_relative 'links/create_link'
 
+require_relative 'votes/vote_type'
+require_relative 'votes/create_vote'
+
 require_relative 'mutation'
 require_relative 'query'
 

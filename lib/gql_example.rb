@@ -31,5 +31,9 @@ module GqlExample
 
       user
     end
+
+    def create_vote(params)
+      Vote.create(params)
+    end
   end
 end
