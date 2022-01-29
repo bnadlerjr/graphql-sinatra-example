@@ -3,7 +3,16 @@
 # rubocop:disable RSpec/FilePath
 RSpec.describe GqlExample::GraphQL::CreateLink do
   subject(:mutation) do
-    described_class.new(object: nil, field: nil, context: {})
+    described_class.new(object: nil, field: nil, context: { current_user: user })
+  end
+
+  let(:user) do
+    GqlExample::User.create(
+      name: 'John Doe',
+      email: 'jdoe@example.com',
+      password: 'secret',
+      password_confirmation: 'secret'
+    )
   end
 
   context 'with valid params' do

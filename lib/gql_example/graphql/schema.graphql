@@ -46,6 +46,11 @@ type Link {
   id: ID!
 
   """
+  User who posted the Link
+  """
+  postedBy: User
+
+  """
   URL of the Link
   """
   url: String!
