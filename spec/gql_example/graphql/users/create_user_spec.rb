@@ -13,8 +13,7 @@ RSpec.describe GqlExample::GraphQL::CreateUser do
         auth: {
           credentials: {
             email: 'jdoe@example.com',
-            password: 'secret',
-            password_confirmation: 'secret'
+            password: 'secret'
           }
         }
       )
@@ -38,8 +37,7 @@ RSpec.describe GqlExample::GraphQL::CreateUser do
         auth: {
           credentials: {
             email: '',
-            password: 'secret',
-            password_confirmation: 'secret'
+            password: 'secret'
           }
         }
       )

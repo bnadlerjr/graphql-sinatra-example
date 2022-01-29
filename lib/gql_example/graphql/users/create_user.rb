@@ -21,7 +21,7 @@ module GqlExample
           name: name,
           email: auth&.[](:credentials)&.[](:email),
           password: auth&.[](:credentials)&.[](:password),
-          password_confirmation: auth&.[](:credentials)&.[](:password_confirmation)
+          password_confirmation: auth&.[](:credentials)&.[](:password)
         )
       rescue Sequel::ValidationFailed => e
         ::GraphQL::ExecutionError.new("Invalid input: #{e.message}")
