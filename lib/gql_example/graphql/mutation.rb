@@ -5,19 +5,17 @@ module GqlExample
     class MutationType < BaseObject
       description 'Root for all mutations'
 
-      field :create_link,
+      field :submit_link,
             description: 'Create a new link',
-            mutation: CreateLink
+            mutation: SubmitLink
 
-      # rubocop:disable GraphQL/ExtractType
-      field :create_user,
+      field :register_user,
             description: 'Create a new user',
-            mutation: CreateUser
+            mutation: RegisterUser
 
-      field :create_vote,
+      field :cast_vote,
             description: 'Vote for a link',
-            mutation: CreateVote
-      # rubocop:enable GraphQL/ExtractType
+            mutation: CastVote
 
       field :signin_user, description: 'Sign user in', mutation: SignIn
     end

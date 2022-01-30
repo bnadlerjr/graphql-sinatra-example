@@ -2,9 +2,9 @@
 
 module GqlExample
   module GraphQL
-    # Mutation to create a new User
+    # Mutation to register a new User
     #
-    class CreateUser < BaseMutation
+    class RegisterUser < BaseMutation
       class AuthSignupData < BaseInputObject
         description 'Signup data'
         argument :credentials, 'GqlExample::GraphQL::AuthCredentialsInput',
@@ -12,14 +12,14 @@ module GqlExample
                  description: 'Auth credentials'
       end
 
-      description 'Create a new user'
+      description 'Register a new user'
       argument :auth, AuthSignupData, 'Signup data', required: false
       argument :name, String, 'Name of user', required: true
 
       type 'GqlExample::GraphQL::UserType'
 
       def resolve(name: nil, auth: nil)
-        GqlExample.create_user(
+        GqlExample.register_user(
           name: name,
           email: auth&.[](:credentials)&.[](:email),
           password: auth&.[](:credentials)&.[](:password),

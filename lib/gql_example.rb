@@ -13,7 +13,7 @@ require_relative 'gql_example/graphql/schema'
 #
 module GqlExample
   class << self
-    def create_link(params)
+    def submit_link(params)
       Link.create(params)
     end
 
@@ -21,7 +21,7 @@ module GqlExample
       Link.all
     end
 
-    def create_user(params)
+    def register_user(params)
       User.create(params)
     end
 
@@ -32,7 +32,7 @@ module GqlExample
       user
     end
 
-    def create_vote(params)
+    def cast_vote(params)
       Vote.create(params)
     end
   end

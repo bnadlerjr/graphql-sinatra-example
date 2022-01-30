@@ -61,24 +61,19 @@ Root for all mutations
 """
 type Mutation {
   """
-  Create a new link
+  Vote for a link
   """
-  createLink(
+  castVote(
     """
-    Description of Link
+    ID of the Link to vote for
     """
-    description: String!
-
-    """
-    URL of Link
-    """
-    url: String!
-  ): Link!
+    linkId: ID!
+  ): Vote!
 
   """
   Create a new user
   """
-  createUser(
+  registerUser(
     """
     Signup data
     """
@@ -91,16 +86,6 @@ type Mutation {
   ): User!
 
   """
-  Vote for a link
-  """
-  createVote(
-    """
-    ID of the Link to vote for
-    """
-    linkId: ID!
-  ): Vote!
-
-  """
   Sign user in
   """
   signinUser(
@@ -109,6 +94,21 @@ type Mutation {
     """
     credentials: AUTH_CREDENTIALS
   ): SignInPayload!
+
+  """
+  Create a new link
+  """
+  submitLink(
+    """
+    Description of Link
+    """
+    description: String!
+
+    """
+    URL of Link
+    """
+    url: String!
+  ): Link!
 }
 
 """
