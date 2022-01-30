@@ -18,6 +18,9 @@ module GqlExample
       def decode(token)
         decoded, = JWT.decode(token, nil, false)
         decoded
+      rescue JWT::DecodeError => e
+        puts "The token #{token.inspect} could not be decoded: #{e.message}"
+        {}
       end
     end
   end
