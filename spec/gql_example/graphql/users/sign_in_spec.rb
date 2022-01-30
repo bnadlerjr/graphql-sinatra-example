@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable RSpec/FilePath
-RSpec.describe GqlExample::GraphQL::SignIn do
+RSpec.describe GqlExample::GraphQL::Users::SignIn do
   subject(:mutation) do
     described_class.new(object: nil, field: nil, context: context)
   end

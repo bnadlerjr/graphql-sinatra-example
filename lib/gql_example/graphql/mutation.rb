@@ -7,17 +7,17 @@ module GqlExample
 
       field :submit_link,
             description: 'Create a new link',
-            mutation: SubmitLink
+            mutation: Links::SubmitLink
 
       field :register_user,
             description: 'Create a new user',
-            mutation: RegisterUser
+            mutation: Users::RegisterUser
 
       field :cast_vote,
             description: 'Vote for a link',
-            mutation: CastVote
+            mutation: Votes::CastVote
 
-      field :signin_user, description: 'Sign user in', mutation: SignIn
+      field :signin_user, description: 'Sign user in', mutation: Users::SignIn
     end
   end
 end

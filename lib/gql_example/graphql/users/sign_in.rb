@@ -2,30 +2,32 @@
 
 module GqlExample
   module GraphQL
-    # Sign-in a user.
-    #
-    class SignIn < BaseMutation
-      description 'Authenticate a user'
+    module Users
+      # Sign-in a user.
+      #
+      class SignIn < BaseMutation
+        description 'Authenticate a user'
 
-      argument :credentials, 'GqlExample::GraphQL::AuthCredentialsInput',
-               required: false,
-               description: 'Auth credentials'
+        argument :credentials, 'GqlExample::GraphQL::Users::AuthCredentialsInput',
+                 required: false,
+                 description: 'Auth credentials'
 
-      field :token, String,
-            null: true,
-            description: 'User token'
+        field :token, String,
+              null: true,
+              description: 'User token'
 
-      field :user, 'GqlExample::GraphQL::UserType',
-            null: true,
-            description: 'The User'
+        field :user, 'GqlExample::GraphQL::Users::UserType',
+              null: true,
+              description: 'The User'
 
-      def resolve(credentials: nil)
-        return unless credentials
+        def resolve(credentials: nil)
+          return unless credentials
 
-        user = GqlExample.sign_in(credentials[:email], credentials[:password])
-        return unless user
+          user = GqlExample.sign_in(credentials[:email], credentials[:password])
+          return unless user
 
-        { token: user.token, user: user }
+          { token: user.token, user: user }
+        end
       end
     end
   end

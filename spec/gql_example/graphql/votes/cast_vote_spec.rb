@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable RSpec/FilePath
-RSpec.describe GqlExample::GraphQL::CastVote do
+RSpec.describe GqlExample::GraphQL::Votes::CastVote do
   subject(:mutation) do
     described_class.new(object: nil, field: nil, context: { current_user: user })
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable RSpec/FilePath
-RSpec.describe GqlExample::GraphQL::VoteType do
+RSpec.describe GqlExample::GraphQL::Votes::VoteType do
   subject { described_class }
 
   it { is_expected.to have_field(:id).of_type('ID!') }
