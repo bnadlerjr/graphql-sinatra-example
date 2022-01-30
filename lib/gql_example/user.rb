@@ -7,6 +7,9 @@ module GqlExample
     plugin :secure_password
     plugin :validation_helpers
 
+    one_to_many :links
+    one_to_many :votes
+
     def token
       AuthToken.encode({ 'user-id' => id })
     end

@@ -7,5 +7,7 @@ RSpec.describe GqlExample::GraphQL::UserType do
   it { is_expected.to have_field(:id).of_type('ID!') }
   it { is_expected.to have_field(:email).of_type('String!') }
   it { is_expected.to have_field(:name).of_type('String!') }
+  it { is_expected.to have_field(:links).of_type('[Link!]!') }
+  it { is_expected.to have_field(:votes).of_type('[Vote!]!') }
 end
 # rubocop:enable RSpec/FilePath

@@ -151,9 +151,19 @@ type User {
   id: ID!
 
   """
+  List of links the user has submitted
+  """
+  links: [Link!]!
+
+  """
   Name of the User
   """
   name: String!
+
+  """
+  List of votes the user has casted
+  """
+  votes: [Vote!]!
 }
 
 """
