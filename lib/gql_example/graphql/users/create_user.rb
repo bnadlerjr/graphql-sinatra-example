@@ -7,14 +7,16 @@ module GqlExample
     class CreateUser < BaseMutation
       class AuthSignupData < BaseInputObject
         description 'Signup data'
-        argument :credentials, AuthCredentialsInput, 'Auth credentials', required: false
+        argument :credentials, 'GqlExample::GraphQL::AuthCredentialsInput',
+                 required: false,
+                 description: 'Auth credentials'
       end
 
       description 'Create a new user'
       argument :auth, AuthSignupData, 'Signup data', required: false
       argument :name, String, 'Name of user', required: true
 
-      type GqlExample::GraphQL::UserType
+      type 'GqlExample::GraphQL::UserType'
 
       def resolve(name: nil, auth: nil)
         GqlExample.create_user(

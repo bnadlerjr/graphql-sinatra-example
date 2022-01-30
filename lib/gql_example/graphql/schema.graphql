@@ -49,6 +49,11 @@ type Link {
   URL of the Link
   """
   url: String!
+
+  """
+  List of votes for the Link
+  """
+  votes: [Vote!]!
 }
 
 """
@@ -84,6 +89,16 @@ type Mutation {
     """
     name: String!
   ): User!
+
+  """
+  Vote for a link
+  """
+  createVote(
+    """
+    ID of the Link to vote for
+    """
+    linkId: ID!
+  ): Vote!
 
   """
   Sign user in
@@ -139,4 +154,24 @@ type User {
   Name of the User
   """
   name: String!
+}
+
+"""
+Vote type
+"""
+type Vote {
+  """
+  Unique ID of the Vote
+  """
+  id: ID!
+
+  """
+  Link for casted vote
+  """
+  link: Link!
+
+  """
+  User who casted the vote
+  """
+  user: User!
 }

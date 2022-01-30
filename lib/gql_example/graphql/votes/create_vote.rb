@@ -9,7 +9,7 @@ module GqlExample
 
       argument :link_id, ID, 'ID of the Link to vote for', required: true
 
-      type GqlExample::GraphQL::VoteType
+      type 'GqlExample::GraphQL::VoteType'
 
       def resolve(params)
         GqlExample.create_vote(params.merge(user: context[:current_user]))

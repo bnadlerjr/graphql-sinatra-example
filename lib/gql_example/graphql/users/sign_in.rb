@@ -7,10 +7,17 @@ module GqlExample
     class SignIn < BaseMutation
       description 'Authenticate a user'
 
-      argument :credentials, AuthCredentialsInput, 'Auth credentials', required: false
+      argument :credentials, 'GqlExample::GraphQL::AuthCredentialsInput',
+               required: false,
+               description: 'Auth credentials'
 
-      field :token, String, 'User token', null: true
-      field :user, UserType, 'The User', null: true
+      field :token, String,
+            null: true,
+            description: 'User token'
+
+      field :user, 'GqlExample::GraphQL::UserType',
+            null: true,
+            description: 'The User'
 
       def resolve(credentials: nil)
         return unless credentials

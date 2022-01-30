@@ -10,7 +10,7 @@ module GqlExample
       argument :description, String, 'Description of Link', required: true
       argument :url, String, 'URL of Link', required: true
 
-      type GqlExample::GraphQL::LinkType
+      type 'GqlExample::GraphQL::LinkType'
 
       def resolve(params)
         GqlExample.create_link(params.merge(user: context[:current_user]))

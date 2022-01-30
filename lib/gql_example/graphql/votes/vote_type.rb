@@ -7,8 +7,13 @@ module GqlExample
 
       field :id, ID, 'Unique ID of the Vote', null: false
 
-      field :link, LinkType, 'Link for casted vote', null: false
-      field :user, UserType, 'User who casted the vote', null: false
+      field :link, 'GqlExample::GraphQL::LinkType',
+            null: false,
+            description: 'Link for casted vote'
+
+      field :user, 'GqlExample::GraphQL::UserType',
+            null: false,
+            description: 'User who casted the vote'
     end
   end
 end

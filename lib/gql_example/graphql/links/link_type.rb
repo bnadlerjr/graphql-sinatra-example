@@ -5,11 +5,24 @@ module GqlExample
     class LinkType < BaseObject
       description 'Link type'
 
-      field :id, ID, 'Unique ID of the Link', null: false
+      field :id, ID, null: false, description: 'Unique ID of the Link'
 
-      field :description, String, 'Description of the Link', null: false
-      field :posted_by, UserType, 'User who posted the Link', null: true, method: :user
-      field :url, String, 'URL of the Link', null: false
+      field :description, String,
+            null: false,
+            description: 'Description of the Link'
+
+      field :posted_by, 'GqlExample::GraphQL::UserType',
+            null: true,
+            method: :user,
+            description: 'User who posted the Link'
+
+      field :url, String,
+            null: false,
+            description: 'URL of the Link'
+
+      field :votes, ['GqlExample::GraphQL::VoteType'],
+            null: false,
+            description: 'List of votes for the Link'
     end
   end
 end
