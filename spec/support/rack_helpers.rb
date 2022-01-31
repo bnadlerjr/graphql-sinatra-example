@@ -28,6 +28,10 @@ module RackHelpers
     end
   end
 
+  def json_body
+    JSON.parse(last_response.body)
+  end
+
   private
 
   def extract_user!(params, env)
