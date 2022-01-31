@@ -42,9 +42,6 @@ RSpec/ContextWording:
         - without
         - when
 
-RSpec/NestedGroups:
-    Max: 4
-
 Style/BlockDelimiters:
     EnforcedStyle: braces_for_chaining
 
