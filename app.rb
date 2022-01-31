@@ -5,7 +5,7 @@ require_relative 'lib/gql_example'
 
 helpers do
   def current_user
-    token = request.env['HTTP_AUTHORIZATION'].gsub(/Bearer /, '')
+    token = request.env['HTTP_AUTHORIZATION']&.gsub(/Bearer /, '')
     GqlExample::User.from_token(token)
   end
 end
