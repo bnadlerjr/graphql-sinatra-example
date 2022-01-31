@@ -41,7 +41,7 @@ RSpec.configure do |config|
     FactoryBot.find_definitions
   end
 
-  config.include RackHelpers, rack: true
+  config.include RackHelpers, type: :request
   config.include RspecSequel::Matchers
 
   config.expect_with :rspec do |expectations|
