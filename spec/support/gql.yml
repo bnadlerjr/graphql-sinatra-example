@@ -1,0 +1,65 @@
+---
+allLinks: '
+  {
+    allLinks {
+      id
+      url
+      description
+      postedBy {
+        id
+      }
+      votes {
+        id
+      }
+    }
+  }
+  '
+
+castVote: '
+  mutation {
+    castVote(linkId: %{link_id}) {
+      id
+      user {
+        id
+      }
+    }
+  }
+  '
+
+registerUser: '
+  mutation {
+    registerUser(
+      name: "%{name}"
+      auth: {credentials: {email: "%{email}", password: "%{password}"}}
+    ) {
+      id
+    }
+  }
+  '
+
+signinUser: '
+  mutation {
+    signinUser(credentials: {email: "%{email}", password: "%{password}"}) {
+      token
+      user {
+        id
+      }
+    }
+  }
+  '
+
+submitLink: '
+  mutation {
+    submitLink(
+      url: "%{url}"
+      description: "%{description}"
+    ) {
+      id
+      url
+      description
+      postedBy {
+        name
+      }
+    }
+  }
+  '

@@ -27,6 +27,7 @@ require 'pry-byebug'
 require 'rack/test'
 require 'rspec/graphql_matchers'
 require 'rspec_sequel_matchers'
+require 'support/gql_helpers'
 require 'support/rack_helpers'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -41,6 +42,7 @@ RSpec.configure do |config|
     FactoryBot.find_definitions
   end
 
+  config.include GqlHelpers, type: :request
   config.include RackHelpers, type: :request
   config.include RspecSequel::Matchers
 
