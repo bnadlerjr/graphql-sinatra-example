@@ -7,6 +7,7 @@ module GqlExample
       #
       class SignIn < BaseMutation
         description 'Authenticate a user'
+        null true
 
         argument :credentials, 'GqlExample::GraphQL::Users::AuthCredentialsInput',
                  required: false,

@@ -93,7 +93,7 @@ type Mutation {
     Auth credentials
     """
     credentials: AUTH_CREDENTIALS
-  ): SignInPayload!
+  ): SignInPayload
 
   """
   Create a new link
