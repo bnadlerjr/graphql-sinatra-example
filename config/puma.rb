@@ -13,7 +13,7 @@ if workers_count > 1
 
   # rubocop:disable Lint/EmptyBlock
   before_fork do
-    DB.disconnect if defined?(DB)
+    Sequel::DATABASES.each(&:disconnect)
   end
 
   on_worker_boot do
