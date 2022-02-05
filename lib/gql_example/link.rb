@@ -9,6 +9,15 @@ module GqlExample
     many_to_one :user
     one_to_many :votes
 
+    dataset_module do
+      def search(params={})
+        conditions = params.filter_map.flat_map do |k, v|
+          Array(v).map { |sv| Sequel.ilike(k, "%#{sv}%") }
+        end
+        conditions.empty? ? all : where(Sequel.|(*conditions))
+      end
+    end
+
     def validate
       super
 
