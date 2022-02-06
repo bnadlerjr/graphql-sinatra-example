@@ -14,5 +14,9 @@ module GqlExample
     class BaseObject < ::GraphQL::Schema::Object
       description 'All objects inherit from this class.'
     end
+
+    class BaseResolver < ::GraphQL::Schema::Resolver
+      description 'All resolvers inherit from this class.'
+    end
   end
 end

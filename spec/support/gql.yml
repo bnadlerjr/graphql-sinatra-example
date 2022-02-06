@@ -1,7 +1,7 @@
 ---
-allLinks: '
+fetchLinks: '
   {
-    allLinks {
+    fetchLinks {
       id
       url
       description

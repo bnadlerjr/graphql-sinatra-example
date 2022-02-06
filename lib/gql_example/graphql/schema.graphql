@@ -116,9 +116,19 @@ The root query type
 """
 type Query {
   """
-  Returns all Link entries
+  Fetch Links.
   """
-  allLinks: [Link!]!
+  fetchLinks(
+    """
+    Description to filter by.
+    """
+    description: [String!]
+
+    """
+    URL to filter by.
+    """
+    url: [String!]
+  ): [Link!]!
 }
 
 """

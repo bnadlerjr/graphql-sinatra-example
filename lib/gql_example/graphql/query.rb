@@ -7,11 +7,9 @@ module GqlExample
     class QueryType < BaseObject
       description 'The root query type'
 
-      field :all_links, [Links::LinkType], 'Returns all Link entries', null: false
-
-      def all_links
-        GqlExample.fetch_all_links
-      end
+      field :fetch_links,
+            resolver: Links::LinkSearch,
+            description: 'Fetch Links.'
     end
   end
 end

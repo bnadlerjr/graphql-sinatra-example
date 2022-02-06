@@ -5,6 +5,7 @@ require 'graphql'
 require_relative 'base'
 
 require_relative 'links/link_type'
+require_relative 'links/link_search'
 require_relative 'links/submit_link'
 
 require_relative 'users/user_type'
