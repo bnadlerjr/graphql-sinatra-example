@@ -2,20 +2,7 @@
 
 ## Overview
 
-TODO: Project description.
-
-### Features
-#### Feature A
-TODO: Describe feature.
-
-#### Feature B
-TODO: Describe feature.
-
-### Links
-* [Production](TODO)
-* [QA](TODO)
-* [Issue Tracking](TODO)
-* [Continuous Integration](TODO)
+Playground for experimenting with the Ruby GraphQL gem. Mostly taken from the [How to GraphQL](https://www.howtographql.com/graphql-ruby/0-introduction/) tutorial except using Sinatra instead of Rails.
 
 ### Table of Contents
 
@@ -24,9 +11,6 @@ TODO: Describe feature.
 * [Configuration](#configuration)
 * [Specs](#specs)
 * [Rake Tasks](#rake-tasks)
-* [Logging](#logging)
-* [Deploying](#deploying)
-* [Dev Notes](#dev-notes)
 
 ## Getting Started
 
@@ -126,13 +110,25 @@ This project uses [RSpec](https://rspec.info/) for testing. Specs can be ran usi
 ## Rake Tasks
 To see a list of available tasks run the `rake -T` command.
 
-## Logging
-TODO: Describe how logging is setup (i.e. files, STDOUT, services like Papertrail, DataDog, etc.).
-
-## Deploying
-TODO: Describe how to deploy the project (QA, production, CI setup, etc.). Don't forget to describe how project environment variables are set for the various deployment targets.
-
-## Dev Notes
-
 ## License
+(The MIT License)
+
 Copyright (c) 2022 Bob Nadler
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
